@@ -24,7 +24,7 @@
 | name                  | text       | null: false                    |
 | info                  | text       | null: false                    |
 | category_id           | integer    | null: false                    |
-| sale_status_di        | integer    | null: false                    |
+| sale_status_id        | integer    | null: false                    |
 | shipping_fee_id       | integer    | null: false                    |
 | prefecture_id         | integer    | null: false                    |
 | scheduled_delivery_id | integer    | null: false                    |
