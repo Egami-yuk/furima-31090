@@ -11,9 +11,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :scheduled_delivery
   
-  # validates :image, :name, :info, presence: true
-  
-  # validates :category_id, :sale_status_id, :shipping_fee_id, :prefecture_id, :scheduled_delivery_id, numericality: { other_than: 1 } 
   with_options presence: true do
     validates :image  
     validates :name
