@@ -11,9 +11,22 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :scheduled_delivery
   
-  validates :image, :name, :info, :category, :sale_status, :shipping_fee, :prefecture, :scheduled_delivery, presence: true
+  # validates :image, :name, :info, presence: true
+  
+  # validates :category_id, :sale_status_id, :shipping_fee_id, :prefecture_id, :scheduled_delivery_id, numericality: { other_than: 1 } 
+  with_options presence: true do
+    validates :image  
+    validates :name
+    validates :info
+  end
 
-  validates :category_id, :sale_status_id, :shipping_fee_id, :prefecture_id, :scheduled_delivery_id, numericality: { other_than: 1 } 
+  with_options numericality: { other_than: 1 } do
+    validates :category_id
+    validates :sale_status_id
+    validates :shipping_fee_id
+    validates :prefecture_id
+    validates :scheduled_delivery_id
+  end
 
   with_options presence: true, format: { with:/\A[0-9]+\z/,message: 'Half-width number'} do
     validates :price
