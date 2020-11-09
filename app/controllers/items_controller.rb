@@ -4,13 +4,13 @@ class ItemsController < ApplicationController
   before_action :move_to_index, only: [:edit, :destroy]
 
   def index
-    @items = Item.order("created_at DESC")
+    @items = Item.includes(:order).order("created_at DESC")
   end
-
+  
   def new
     @item = Item.new
   end
-
+  
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-    
+  
   def show
   end
   
@@ -56,4 +56,6 @@ class ItemsController < ApplicationController
       redirect_to root_path
     end
   end
+
 end
+
