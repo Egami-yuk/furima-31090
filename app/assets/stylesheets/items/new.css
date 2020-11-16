@@ -74,24 +74,49 @@
 
 /* 出品画像 */
 .img-upload {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   padding: 2vh 0;
+  height: 250px;
 }
-#image-list div img{
-  width: 100px;
-  height: 100px;
+#image-lists{
+  height: 150px;
+
+}
+#image-list1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+#image-list1 img{
+  width: 150px;
+  height: 110px;
+  
+}
+#image-list2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+#image-list2 img{
+  width: 150px;
+  height: 110px;
 }
 
 .click-upload {
-  margin: 15px 0;
+  margin-bottom: 15px ;
   min-width: 250px;
 }
 
 .click-upload>p {
   margin-bottom: 15px;
 }
+
+#image-lists {
+  display: flex;
+  justify-content: space-around;
+}
+
 
 /* /出品画像 */
 

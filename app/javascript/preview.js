@@ -1,22 +1,39 @@
-document.addEventListener('DOMContentLoaded', function(){
-  const ImageList = document.getElementById('image-list');
-  document.getElementById('item-image').addEventListener('change', function(e){
-    // 画像が表示されている場合のみ、すでに存在している画像を削除する
-    const imageContent = document.querySelector('img');
+document.addEventListener('DOMContentLoaded', function() {
+  const ImageList = document.getElementById('image-list1')
+  const createImageHTML = (blob) => {
+    const blobImage = document.createElement('img')
+    blobImage.setAttribute('src', blob)
+    blobImage.setAttribute('id', 'image1')
+    // blobImage.setAttribute('class', image1)
+    ImageList.prepend(blobImage)
+  }
+  document.getElementById('item-image1').addEventListener('change', (e) => {
+    // const imageContent = document.querySelector('img');
+    const imageContent = document.getElementById('image1');
     if (imageContent){
-      imageContent.remove();
+      imageContent.remove(); 
     }
-    
     const file = e.target.files[0];
     const blob = window.URL.createObjectURL(file);
-
-    // 画像を表示するためのdiv要素を生成
-    const imageElement = document.createElement('div');
-
-    // 表示する画像を生成
-    const blobImage = document.createElement('img');
-    blobImage.setAttribute('src', blob);
-    imageElement.appendChild(blobImage);
-    ImageList.appendChild(imageElement);
+    createImageHTML(blob)
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const ImageList = document.getElementById('image-list2')
+  const createImageHTML = (blob) => {
+    const blobImage = document.createElement('img')
+    blobImage.setAttribute('src', blob )
+    blobImage.setAttribute('id', 'image2')
+    ImageList.prepend(blobImage)
+  }
+  document.getElementById('item-image2').addEventListener('change', (e) => {
+    // const imageContent = document.querySelector('img');
+    const imageContent = document.getElementById('image2');
+      if (imageContent){
+        imageContent.remove();
+      }
+    const file = e.target.files[0];
+    const blob = window.URL.createObjectURL(file);
+    createImageHTML(blob)
   });
 });

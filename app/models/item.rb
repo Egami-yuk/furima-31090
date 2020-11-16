@@ -3,7 +3,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one :order
-  has_one_attached :image
+  has_many_attached :images
   
   belongs_to_active_hash :category
   belongs_to_active_hash :sale_status
@@ -12,7 +12,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :scheduled_delivery
   
   with_options presence: true do
-    validates :image  
+    validates :images
     validates :name
     validates :info
   end
